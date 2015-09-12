@@ -8,24 +8,30 @@ var bio = {
 		twitter : '@sockeyesteve',
 		location : 'Vancouver, BC, Canada'
 	},
-	welcomeMessage : 'Hello, there!',
+	welcomeMessage : 'Welcome to my resume page built with HTML, CSS and JavaScript!',
 	skills : [
 		'design', 'coding', 'teaching'
 	],
 	biopic : 'images/wolflogo200.png',
 	display : function() {
-		//Place name and role in the header
-		var formattedName = HTMLheaderName.replace('%data%', this.name);
-		var formattedRole = HTMLheaderRole.replace('%data%', this.role);
-		$('#header').prepend(formattedRole);
-		$('#header').prepend(formattedName);
+		//Place name and role in the header before topContacts
+		var selector = $('#header');
+		prependItem(selector, HTMLheaderRole, this.role);
+		prependItem(selector, HTMLheaderName, this.name);
+		//Place photo and welcome message after topContacts
+		appendItem(selector, HTMLbioPic, this.biopic);
+		appendItem(selector, HTMLwelcomeMsg, this.welcomeMessage);
+		//add skills to header if not empty
+		if (this.skills.length > 0){
+			appendItem(selector, HTMLskillsStart); /* Add the section title */
+			for (var i = 0; i < this.skills.length; i++) {
+				appendItem(selector, HTMLskills, this.skills[i]);
+			};
+		}
+		//Place info into topContacts
+		//TODO: Add function to put same info in both topContacts and footerContacts
+		selector = $('#topContacts');
 
-
-
-//if (bio.skills.length > 0){
-//	var formattedSkills = HTMLskills.replace('%data%', bio.skills);
-//	$('#header').append(HTMLskillsStart);
-//	$('#header').append(formattedSkills);
 	}
 };
 bio.display();
@@ -119,7 +125,18 @@ var projects = {
 	//display: function() {}
 };
 
+//The functions below, 'prependItem() and 'appendItem()' add items to HTML
+//If no 'value' argument is passed, there will not be any replacement of %data%
+//Tester can then render the page and search for %data% to debug and find missing info
+function prependItem(selector, HTMLitem, value){
+	if (value) selector.prepend(HTMLitem.replace('%data%', value));
+	else selector.prepend(HTMLitem);
+};
 
+function appendItem(selector, HTMLitem, value){
+	if (value) selector.append(HTMLitem.replace('%data%', value));
+	else selector.append(HTMLitem);
+}
 
 
 //--------test area
