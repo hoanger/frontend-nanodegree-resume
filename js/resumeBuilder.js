@@ -8,17 +8,18 @@ var bio = {
 		twitter : '@sockeyesteve',
 		location : 'Vancouver, BC, Canada'
 	},
-	welcomeMesage : 'Hello, there!',
+	welcomeMessage : 'Hello, there!',
 	skills : [
 		'design', 'coding', 'teaching'
 	],
 	biopic : 'images/wolflogo200.png',
-	display : function(){
+	display : function() {
 		//Place name and role in the header
-		//var formattedName = HTMLheaderName.replace('%data%', bio.name);
-		//var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-		//$('#header').append(formattedName);
-		//$('#header').append(formattedRole);
+		var formattedName = HTMLheaderName.replace('%data%', this.name);
+		var formattedRole = HTMLheaderRole.replace('%data%', this.role);
+		$('#header').prepend(formattedRole);
+		$('#header').prepend(formattedName);
+
 
 
 //if (bio.skills.length > 0){
@@ -27,6 +28,8 @@ var bio = {
 //	$('#header').append(formattedSkills);
 	}
 };
+bio.display();
+
 
 var education = {
 	schools : [
@@ -71,7 +74,7 @@ var education = {
 			url : 'https://www.codecademy.com'
 		}
 	],
-	//display: function(){}
+	//display: function() {}
 };
 
 var work = {
@@ -81,28 +84,25 @@ var work = {
 			title : 'Business Analyst, Operational Intelligence',
 			location : 'Vancouver, BC, Canada',
 			dates : 'April 2015 - Present',
-			description : '-Business analysis with focus in operations\n
-			-Process and tools analysis and improvement'
+			description : 'Business analysis with focus in operations processes and tools'
 		},
 		{
 			employer : 'Hyperwallet Systems Inc.',
 			title : 'Production Support Specialist',
 			location : 'Vancouver, BC, Canada',
 			dates : 'September 2014 - March 2015',
-			description : '-Technical support and application monitoring for clients\n
-			-Client training for applications'
+			description : 'Technical support, application monitoring and training for clients'
 		},
 		{
 			employer : 'Tom Harris Cellular',
 			title : 'Manager Retail Sales/Training',
 			location : 'Vancouver, BC, Canada',
 			dates : 'March 2013 - September 2014',
-			description : '-Recruiting, training and management of sales teams\n
-			-Top 10 Sales in 2013 - President\'s Club'
+			description : 'Recruiting, training and management of sales teams acheiving Top 10 in Sales in 2013'
 
 		}
 	],
-	//display: function(){}
+	//display: function() {}
 };
 
 var projects = {
@@ -110,29 +110,30 @@ var projects = {
 		{
 			title : 'Responsive Design: Portfolio Website',
 			dates : 'September 2015',
-			description : 'This project is a website that demonstrates responsive design. Through the use of Media
-			queries, srcset and Bootstrap CSS, the format of the page adjusts to various sizes of the browser window.',
+			description : 'This project is a website that demonstrates responsive design. Through the use of media queries, srcset and Bootstrap CSS, the format of the page adjusts to various sizes of the browser window.',
 			images : [
 				'images/P1-full.jpg', 'images/P1-mobile1.jpg', 'images/P1-mobile2.jpg.jpg'
 			]
 		}
 	],
-	//display: function(){}
+	//display: function() {}
 };
+
 
 
 
 //--------test area
 //var formattedName = HTMLheaderName.replace('%data%', bio.name);
 //var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-
+console.log('bio.name is ' + bio.name);
+console.log('bio.role is ' + bio.role);
 //$('#header').append(formattedName);
 //$('#header').append(formattedRole);
 //if (bio.skills.length > 0){
 //	var formattedSkills = HTMLskills.replace('%data%', bio.skills);
 //	$('#header').append(HTMLskillsStart);
 //	$('#header').append(formattedSkills);
-}
+//}
 
 
 
