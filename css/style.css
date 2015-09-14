@@ -26,7 +26,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #1199c3;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +34,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #bbb;
   line-height: 29px;
   padding: 10px;
 }
@@ -96,20 +96,20 @@ a {
   font-style: italic;
   font-size: 18px;
   color: #f3f3f3;
-  line-height: 28px;
+  line-height: 40px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #1199c3;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #1199c3;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #1199c3;
 }
 
 .white-text {
@@ -127,9 +127,8 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #003333;
 }
 
 .flex-box {
@@ -138,7 +137,11 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 12px;
+}
+
+.flex-item {
+  padding: 5px;
 }
 
 .center-content {
@@ -153,11 +156,14 @@ ul {
   float: left;
   padding: 10px;
   width: 200px;
+  height: 200px;
+  border-radius: 20px;
   display: none;
 }
 
 img {
   padding: 10px;
+  max-width: 100%;
 }
 
 span {
@@ -166,6 +172,28 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+#skills {
+  flex-direction: column;
+}
+
+#main {
+  float: left;
+  max-width: 80%;
+}
+
+#side-bar {
+  float: left;
+  text-align: left;
+  padding: 15px;
+  margin-left: 5px;
+  max-width: 20%;
+}
+
+#nav-links {
+  position: fixed;
+
 }
 
 /* Media queries to handle various device widths */
@@ -179,6 +207,16 @@ span {
 @media only screen and (max-width:900px) {
   .biopic {
     width: 175px;
+    height: 175px;
+  }
+  .welcome-message {
+    font-size: 14px;
+  }
+  #side-bar {
+    display: none;
+  }
+  #main {
+    max-width: 100%;
   }
 }
 
@@ -188,6 +226,7 @@ span {
   }
   .biopic {
     width: 150px;
+    height: 150px;
   }
   .welcome-message {
     display: none;
@@ -210,5 +249,6 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+    padding-left: 2%;
   }
 }

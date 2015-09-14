@@ -18,6 +18,7 @@ var bio = {
 		var selector = $('#header');
 		prependItem(selector, HTMLheaderRole, this.role);
 		prependItem(selector, HTMLheaderName, this.name);
+		$( "#header > span" ).addClass('white-text');
 		/* Place photo and welcome message after topContacts */
 		appendItem(selector, HTMLbioPic, this.biopic);
 		appendItem(selector, HTMLwelcomeMsg, this.welcomeMessage);
@@ -174,7 +175,7 @@ var projects = {
 			dates : 'September 2015',
 			description : 'This project is a website that demonstrates responsive design. Through the use of media queries, srcset and Bootstrap CSS, the format of the page adjusts to various sizes of the browser window.',
 			images : [
-				'images/P1-full.jpg', 'images/P1-mobile1.jpg', 'images/P1-mobile2.jpg'
+				'images/P1-full.jpg', 'images/P1-mobile1.jpg'
 			]
 		}
 	],
